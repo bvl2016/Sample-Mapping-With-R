@@ -67,3 +67,22 @@ title("Madagascar, the 23 regions")
 To conclude, this is just a simple manipulation to begin with. We will see for the next coming tuto, thematic maps with some spatial analysis!
 
 If you would like to further your skills in mapping with R, there are lots of resources out there, not to mention https://github.com/Robinlovelace/Creating-maps-in-R
+
+## Join more attributes from external source
+
+In here, we load a csv which contains the statistic data related to number of habitants in Madagascar that I get from the internet (means it is not an official dataset, just for the practice) 
+
+```R
+stat_pop <- read.csv("pop_region.csv",
+                       stringsAsFactors = FALSE)
+```
+Now, we compare the ADM2NM column in mada_regions to region column in stat_pop to see which rows match.
+```R
+mada_regions$ADM2NM %in% stat_pop$region
+```
+```R
+[1] TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE
+[20] TRUE TRUE TRUE TRUE
+
+```
+
