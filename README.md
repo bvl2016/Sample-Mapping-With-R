@@ -80,9 +80,19 @@ Now, we compare the ADM2NM column in mada_regions to region column in stat_pop t
 ```R
 mada_regions$ADM2NM %in% stat_pop$region
 ```
+
+The result indicates that all names match
+
 ```R
 [1] TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE
 [20] TRUE TRUE TRUE TRUE
 
 ```
+Join the spatial and non-spatial datasets (the csv) by loading the dplyr package
+```R
+library(dplyr)
+mada_regions@data <- left_join(mada_regions@data, stat_pop, by = c('ADM2NM' = 'region'))
+```
+
+
 
