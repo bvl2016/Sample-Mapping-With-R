@@ -49,6 +49,7 @@ plot(mada_regions, col = "lightgrey")
 ![mada_grey](https://user-images.githubusercontent.com/16953165/211030473-3824f4a1-e4ab-4ab9-911b-574d7c2a9dd8.png)
 
 ## Select region who has the largest area
+In here, we use the Shape_Area column to check the value.
 ```R
 big_r <- mada_regions$Shape_Area == max(mada_regions$Shape_Area)
 ```
