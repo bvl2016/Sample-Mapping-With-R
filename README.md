@@ -109,4 +109,5 @@ tm_shape(mada_regions) + tm_polygons(col = "pop", palette="Reds", title="Number 
 - You can check various alternative in here https://geocompr.robinlovelace.net/adv-map.html 
 
 
+![image](https://user-images.githubusercontent.com/16953165/214056804-118e4dc6-077a-4dd5-ae47-bbbda7e1c134.png)
 
