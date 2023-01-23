@@ -93,6 +93,20 @@ Join the spatial and non-spatial datasets (the csv) by loading the dplyr package
 library(dplyr)
 mada_regions@data <- left_join(mada_regions@data, stat_pop, by = c('ADM2NM' = 'region'))
 ```
+## Plotting with aesthetic 
+
+In here, we use tmap package
+
+```R
+library(tmap)  
+tm_shape(mada_regions) + tm_polygons(col = "pop", palette="Reds", title="Number of Population", style="jenks") + tm_layout(bg.color = "lightblue")+tm_scale_bar(breaks = c(0, 100, 200), text.size = 0.7) 
+
+```
+- tm_shape takes the input shapefile. 
+- tm_polygons speficies the column associated with the geometry to get mapped, the color, the title of the legend, and the style for the classification (we use jenks style here)
+- tm_layout for background
+- tm_scale_bar for the scale bar
+- You can check various alternative in here https://geocompr.robinlovelace.net/adv-map.html 
 
 
 
